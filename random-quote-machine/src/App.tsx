@@ -5,8 +5,11 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        TODO
+      <div id="quote-box">
+        <div id="text">Text</div>
+        <div id="author">Author</div>
+        <button id="new-quote"></button>
+        <a id="tweet-quote" href=""></a>
       </div>
     </div>
   )
