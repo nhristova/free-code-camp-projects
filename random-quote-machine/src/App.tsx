@@ -10,6 +10,8 @@ import { useState } from 'react';
 function App() {
   const [quote, setQuote] = useState(getRandomQuote(quotes));
 
+  const getNewQuote = () => setQuote(getRandomQuote(quotes));
+  
   return (
     <div className="App">
       <div id="quote-box">
@@ -22,7 +24,7 @@ function App() {
           <a id="facebook-quote" href="">
             <img src={facebook} alt="" />
           </a>
-          <button id="new-quote">New qote</button>
+          <button id="new-quote" onClick={getNewQuote}>New qote</button>
         </div>
       </div>
       <div id="author-box">
