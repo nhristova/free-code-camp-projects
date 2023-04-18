@@ -14,7 +14,8 @@ export function QuoteBox({ quote, getNewQuote }: { quote: Quote, getNewQuote: Mo
       <div className="actions">
         <SocialLink id="tweet-quote" src={twitter} href="" alt="twitter icon"/>
         <SocialLink id="facebook-quote" src={facebook} href="" alt="facebook icon" />
-        <button id="new-quote" onClick={getNewQuote}>New qote</button>
+        <div className="spacer"></div>
+        <button id="new-quote" onClick={getNewQuote} className="new-quote">New qote</button>
       </div>
     </div>
     <div id="author-box">

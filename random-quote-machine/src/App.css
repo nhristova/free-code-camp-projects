@@ -17,6 +17,23 @@ body {
   border-radius: 5px;
 }
 
+.actions {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.social-link {
+  width: 30px;
+  padding: 10px;
+  background-color: palevioletred;
+  margin: 2px;
+  border-radius: 3px;
+}
+
+.spacer {
+  flex-grow: 2;
+}
+
 a img {
   width: 20px;
 }
