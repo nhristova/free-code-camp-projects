@@ -8,7 +8,7 @@ export function QuoteBox({ quote, getNewQuote }: { quote: Quote, getNewQuote: Mo
   return (
     <div id="quote-box">
       <QuoteContent {...quote} />
-      <Actions getNewQuote={getNewQuote} />
+      <Actions quote={quote} getNewQuote={getNewQuote} />
     </div>
   )
 }
