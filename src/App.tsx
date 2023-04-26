@@ -1,26 +1,30 @@
 import './App.css';
-import { getRandomQuote } from './core/getRandomQuote';
 import { useEffect, useState } from 'react';
 import { QuoteBox } from './components/QuoteBox';
-import { loadQuotes, quotesUrl } from './data/loadQuotes';
+import { loadQuotes, quotesUrl, getRandom, colors } from './data';
 import { Quote } from './types/Quote';
+import { AboutBox } from './components/AboutBox';
 
 function App() {
   const [quotes, setQuotes] = useState([] as Quote[]);
   const [quote, setQuote] = useState(null as Quote | null);
-
-  const getNewQuote = () => {
-    const i = Math.floor(Math.random() * 100);
-    setQuote(quotes[i]);
-  };
+  const [color, setColor] = useState('#98D8AA');
 
   useEffect(() => {
     loadQuotes(quotesUrl).then(q => {
-      setQuotes(q.quotes);
+      setQuotes(q);
     })
   }, []);
 
   useEffect(() => getNewQuote(), [quotes]);
+  useEffect(() => {
+    document.documentElement.style.setProperty('--theme-color', color);
+  }, [color]);
+
+  const getNewQuote = () => {
+    setQuote(getRandom(quotes));
+    setColor(getRandom(colors));
+  };
 
   if (!quote) {
     return <div>Loading</div>;
@@ -28,7 +32,8 @@ function App() {
 
   return (
     <div className="App">
-      < QuoteBox quote={quote} getNewQuote={getNewQuote} />
+      <QuoteBox quote={quote} getNewQuote={getNewQuote} />
+      <AboutBox />
     </div >
   )
 }

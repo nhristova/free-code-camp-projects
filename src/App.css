@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import './styles/variables.css';
+
 #root {
-  width: 50vw;
-  max-width: 1280px;
+  max-width: 700px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 5px;
   text-align: center;
 }
 
 body {
-  background-color: pink;
+  background-color: var(--theme-color);
 }
 
 #quote-box {
@@ -17,27 +19,70 @@ body {
   border-radius: 5px;
 }
 
-.actions {
+.quote-symbol {
+  font-size: 5rem;
+  vertical-align: text-bottom;
+  line-height: 90%;
+}
+
+.quote-text {
+  font-size: 3rem;
+  font-family: 'Pacifico', cursive;
+}
+
+.quote-author {
+  font-size: 1.3rem;
+  padding: 10px;
+  text-align: right;
+}
+
+.actions-box {
   display: flex;
   justify-content: space-evenly;
 }
 
 .social-link {
   width: 30px;
-  padding: 10px;
-  background-color: palevioletred;
+  padding: 14px 10px 10px 10px;
+  background-color: var(--theme-color);
   margin: 2px;
   border-radius: 3px;
-}
-
-.new-quote {
-  color: red;
 }
 
 .spacer {
   flex-grow: 2;
 }
 
-a img {
+.img-20 {
+  padding-top: 4px;
   width: 20px;
+}
+
+.img-15 {
+  width: 15px;
+}
+
+/* About box */
+
+.about-box{
+  color: var(--font-color)
+}
+
+
+@media only screen and (min-width: 425px) {
+  #root {
+    padding: 2rem;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  #root {
+    width: 70vw;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #root {
+    width: 50vw;
+  }
 }
