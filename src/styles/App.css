@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import './styles/variables.css';
+@import './variables.css';
 
 #root {
   max-width: 700px;
@@ -27,9 +27,13 @@ body {
 
 .quote-text {
   font-size: 3rem;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Pacifico', cursive;  
+  transition: filter 0.5s;
 }
 
+.quote-text:hover{
+  filter: saturate(200%) drop-shadow(3px 3px 1px rgb(177, 177, 177))
+}
 .quote-author {
   font-size: 1.3rem;
   padding: 10px;

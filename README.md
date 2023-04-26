@@ -26,3 +26,5 @@ Note: Twitter does not allow links to be loaded in an iframe. Try using the targ
 
 Free Code Camp https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine
 
+## Image credits:
+- copy by ARISO from <a href="https://thenounproject.com/browse/icons/term/copy/" target="_blank" title="copy Icons">Noun Project</a>

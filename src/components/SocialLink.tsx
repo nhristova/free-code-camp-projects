@@ -7,7 +7,7 @@ export function SocialLink(props: { id: string, src: string, href: string, alt: 
         id={props.id}
         href={props.href}
         target="_blank">
-        <img src={props.src} className="img-20" alt="" />
+        <img src={props.src} className="img-20" alt={props.alt} />
       </a>
     </button>
   )
