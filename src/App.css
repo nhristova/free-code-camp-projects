@@ -30,6 +30,10 @@ body {
   border-radius: 3px;
 }
 
+.new-quote {
+  color: red;
+}
+
 .spacer {
   flex-grow: 2;
 }
