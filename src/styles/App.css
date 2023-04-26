@@ -10,6 +10,7 @@
 
 body {
   background-color: var(--theme-color);
+  transition: background-color 1s;
 }
 
 #quote-box {
