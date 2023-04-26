@@ -1,5 +1,5 @@
 export type Quote = {
-  text: string,
+  quote: string,
   author: string
 }
 

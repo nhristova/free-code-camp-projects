@@ -1,19 +1,35 @@
-import viteLogo from '/vite.svg';
 import './App.css';
-import quotes from './data/qotes.json';
 import { getRandomQuote } from './core/getRandomQuote';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { QuoteBox } from './components/QuoteBox';
+import { loadQuotes, quotesUrl } from './data/loadQuotes';
+import { Quote } from './types/Quote';
 
 function App() {
-  const [quote, setQuote] = useState(getRandomQuote(quotes));
+  const [quotes, setQuotes] = useState([] as Quote[]);
+  const [quote, setQuote] = useState(null as Quote | null);
 
-  const getNewQuote = () => setQuote(getRandomQuote(quotes));
+  const getNewQuote = () => {
+    const i = Math.floor(Math.random() * 100);
+    setQuote(quotes[i]);
+  };
+
+  useEffect(() => {
+    loadQuotes(quotesUrl).then(q => {
+      setQuotes(q.quotes);
+    })
+  }, []);
+
+  useEffect(() => getNewQuote(), [quotes]);
+
+  if (!quote) {
+    return <div>Loading</div>;
+  }
 
   return (
     <div className="App">
-        <QuoteBox quote={quote} getNewQuote={getNewQuote}/>
-    </div>
+      < QuoteBox quote={quote} getNewQuote={getNewQuote} />
+    </div >
   )
 }
 
